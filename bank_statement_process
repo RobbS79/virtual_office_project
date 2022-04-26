@@ -61,4 +61,4 @@ categorised = categorise_statement(bank_statement,structure,by_column)
 statement1 = categorised.drop(columns=["Typ transakcie"], axis=1, inplace=True)
 categorised
 
-### Voila ###
+#works on particular model of business processes
