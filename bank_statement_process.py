@@ -64,7 +64,7 @@ def loads_partners(partners_csv_file):
     partner_ids = []
     for i in range(len(partners_data)):
         entry = partners_data.iloc[i][0]
-        partner_ids.append(id(entry))
+        partner_ids.append(str(id(entry)))
 
     partners_data["partner_id"] = partner_ids
     return(partners_data)
