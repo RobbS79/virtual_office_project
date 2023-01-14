@@ -19,17 +19,17 @@ import psycopg2
 
 
 # Conneect to an existing databasee
-conn = psycopg2.connect("dbname=zentak_employees user=rob")
+conn = psycopg2.connect("credentials")
 
 
 emp_database_df = psql.read_sql('SELECT * FROM employees', conn)
 df = emp_database_df
 
-company_data = pd.read_excel("/Users/rob/Desktop/virtual_office/HR/forms/input_employees_to_db.xlsx","Sheet2",header=0)
+company_data = pd.read_excel("path to company data in excel file","Sheet2",header=0)
 
 
 writer = PdfWriter()
-reader2 = PdfReader("forms/Oznameni_vyslani_pracovnika (1).pdf")
+reader2 = PdfReader("path to .pdf form file")
 fields2 = reader2.get_fields()
 #x2 = fields2.items()
 
@@ -59,5 +59,5 @@ for j in range(len(reader2.pages)):
 
 
 # write "output" to PyPDF2-output.pdf
-with open("filled-out2_3.pdf", "wb") as output_stream:
+with open("output .pdf file", "wb") as output_stream:
     writer.write(output_stream)
